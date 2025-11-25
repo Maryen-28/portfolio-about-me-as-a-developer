@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Personal portfolio showcasing creative projects, professional experience, and contact information."
+    />
+    <title>Portfolio - Creative Professional</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+      body,
+      html {
+        color: hsl(220, 15%, 15%);
+      }
+
+      .gradient-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: hsl(256, 80%, 50%);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      .card-hover {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .card-hover:hover {
+        transform: scale(1.03);
+      }
+
+      .fade-in {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+      }
+
+      .fade-in-delay-1 {
+        animation-delay: 0.2s;
+      }
+
+      .fade-in-delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .fade-in-delay-3 {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .mobile-menu {
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .mobile-menu.open {
+        transform: translateX(0);
+      }
+    </style>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="font-sans bg-neutral text-neutral-foreground">
+    <!-- Navigation -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200"
+    >
+      <div class="max-w-7xl mx-auto px-8 lg:px-16">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo/Name -->
+          <a
+            href="#hero"
+            class="font-heading font-bold text-xl text-neutral-foreground"
+            >Portfolio</a
+          >
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center gap-12">
+            <a
+              href="#about"
+              class="nav-link text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+              >About</a
+            >
+            <a
+              href="#portfolio"
+              class="nav-link text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+              >Portfolio</a
+            >
+            <a
+              href="#resume"
+              class="nav-link text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+              >Resume</a
+            >
+            <a
+              href="#contact"
+              class="nav-link text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+              >Contact</a
+            >
+          </div>
+
+          <!-- Social Icons -->
+          <div class="hidden md:flex items-center gap-4">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                ></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden w-10 h-10 flex items-center justify-center text-neutral-foreground"
+            aria-label="Toggle menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="mobile-menu fixed top-0 right-0 bottom-0 w-64 bg-white z-50 md:hidden"
+    >
+      <div class="flex flex-col h-full">
+        <div
+          class="flex items-center justify-between p-8 border-b border-gray-200"
+        >
+          <span class="font-heading font-bold text-lg text-neutral-foreground"
+            >Menu</span
+          >
+          <button
+            id="mobile-menu-close"
+            class="w-8 h-8 flex items-center justify-center text-neutral-foreground"
+            aria-label="Close menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 6 6 18"></path>
+              <path d="m6 6 12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-2 p-8">
+          <a
+            href="#about"
+            class="mobile-menu-link py-4 text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+            >About</a
+          >
+          <a
+            href="#portfolio"
+            class="mobile-menu-link py-4 text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+            >Portfolio</a
+          >
+          <a
+            href="#resume"
+            class="mobile-menu-link py-4 text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+            >Resume</a
+          >
+          <a
+            href="#contact"
+            class="mobile-menu-link py-4 text-neutral-foreground hover:text-primary transition-colors cursor-pointer"
+            >Contact</a
+          >
+        </nav>
+        <div class="mt-auto p-8 border-t border-gray-200">
+          <div class="flex items-center gap-4">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                ></path>
+              </svg>
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect width="4" height="12" x="2" y="9"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              class="w-10 h-10 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                ></path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex items-center justify-center overflow-hidden"
+      >
+        <div class="absolute inset-0 w-full h-full">
+          <video
+            aria-label="abstract background motion"
+            src="https://c.animaapp.com/mie73zissOwntu/img/ai_5.mp4"
+            poster="https://c.animaapp.com/mie73zissOwntu/img/ai_5-poster.png"
+            class="w-full h-full object-cover"
+            autoplay=""
+            loop=""
+            muted=""
+            playsinline=""
+          ></video>
+          <div
+            class="pointer-events-none absolute inset-0 gradient-overlay"
+          ></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-8 lg:px-16 py-32">
+          <div class="flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1 text-center lg:text-left">
+              <h1
+                class="font-heading font-bold text-5xl md:text-6xl lg:text-7xl text-white mb-6 fade-in"
+              >
+                Maryen E. Borabo
+              </h1>
+              <p
+                class="font-heading text-2xl md:text-3xl text-white mb-4 fade-in fade-in-delay-1"
+              >
+                Creative Developer &amp; Designer
+              </p>
+              <p
+                class="text-lg md:text-xl text-gray-200 mb-12 fade-in fade-in-delay-2"
+              >
+                Crafting digital experiences that inspire and engage
+              </p>
+              <a
+                href="#portfolio"
+                class="inline-block px-8 py-4 bg-primary text-primary-foreground font-normal rounded hover:bg-secondary transition-colors cursor-pointer fade-in fade-in-delay-3"
+              >
+                View My Work
+              </a>
+            </div>
+            <div class="flex-shrink-0 fade-in fade-in-delay-2">
+              <img
+                src="https://c.animaapp.com/mie73zissOwntu/img/7c6dca53-cfa3-40fc-a6d0-eda9ca36042e.jpeg"
+                alt="Maryen E. Borabo profile portrait"
+                width="300"
+                height="300"
+                class="rounded-full border-4 border-white/20"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-32 px-8 lg:px-16 bg-white">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2
+                class="font-heading font-bold text-4xl md:text-5xl text-neutral-foreground mb-8"
+              >
+                About Me
+              </h2>
+              <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                I'm a passionate creative professional with over 8 years of
+                experience in digital design and development. My work combines
+                technical expertise with artistic vision to create memorable
+                digital experiences.
+              </p>
+              <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                I specialize in building modern, accessible, and performant web
+                applications that put users first. My approach is rooted in
+                understanding business goals and translating them into elegant
+                solutions.
+              </p>
+              <div class="space-y-4">
+                <h3
+                  class="font-heading font-semibold text-xl text-neutral-foreground mb-4"
+                >
+                  Key Skills &amp; Tools
+                </h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-start gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="text-primary flex-shrink-0 mt-1"
+                    >
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span
+                      >Frontend Development: React, Vue, HTML5, CSS3,
+                      JavaScript</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="text-primary flex-shrink-0 mt-1"
+                    >
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span
+                      >UI/UX Design: Figma, Adobe XD, Sketch, Prototyping</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="text-primary flex-shrink-0 mt-1"
+                    >
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span
+                      >Accessibility: WCAG 2.1 AA/AAA compliance, ARIA best
+                      practices</span
+                    >
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="text-primary flex-shrink-0 mt-1"
+                    >
+                      <path d="M20 6 9 17l-5-5"></path>
+                    </svg>
+                    <span
+                      >Performance Optimization: Core Web Vitals, SEO,
+                      Analytics</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <img
+                src="https://c.animaapp.com/mie73zissOwntu/img/ai_2.png"
+                alt="workspace setup"
+                width="1200"
+                height="800"
+                class="rounded w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section id="portfolio" class="py-32 px-8 lg:px-16 bg-neutral">
+        <div class="max-w-7xl mx-auto">
+          <div class="text-center mb-16">
+            <h2
+              class="font-heading font-bold text-4xl md:text-5xl text-neutral-foreground mb-4"
+            >
+              Featured Work
+            </h2>
+            <p class="text-lg text-gray-700 max-w-2xl mx-auto">
+              A selection of recent projects showcasing my skills in design,
+              development, and problem-solving.
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project Card 1 -->
+            <article
+              class="bg-white rounded overflow-hidden card-hover cursor-pointer"
+            >
+              <a
+                href="https://online-ordering-system-five.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="https://c.animaapp.com/mie73zissOwntu/img/ai_3.png"
+                    alt="Online Ordering System"
+                    width="1200"
+                    height="800"
+                    class="w-full h-64 object-cover"
+                    loading="lazy"
+                  />
+                  <div
+                    class="absolute inset-0 bg-primary/90 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center"
+                  >
+                    <span class="text-primary-foreground font-normal text-lg"
+                      >View Project</span
+                    >
+                  </div>
+                </div>
+                <div class="p-8">
+                  <h3
+                    class="font-heading font-semibold text-2xl text-neutral-foreground mb-3"
+                  >
+                    Online Ordering System
+                  </h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    A comprehensive online ordering platform with real-time order tracking, 
+                    user authentication, and seamless payment integration.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article
+              class="bg-white rounded overflow-hidden card-hover cursor-pointer"
+            >
+              <a
+                href="https://ecommercepage-jade.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="https://c.animaapp.com/mie73zissOwntu/img/ai_4.png"
+                    alt="E-Commerce Page"
+                    width="1200"
+                    height="800"
+                    class="w-full h-64 object-cover"
+                    loading="lazy"
+                  />
+                  <div
+                    class="absolute inset-0 bg-primary/90 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center"
+                  >
+                    <span class="text-primary-foreground font-normal text-lg"
+                      >View Project</span
+                    >
+                  </div>
+                </div>
+                <div class="p-8">
+                  <h3
+                    class="font-heading font-semibold text-2xl text-neutral-foreground mb-3"
+                  >
+                    E-Commerce Page
+                  </h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Modern e-commerce landing page with responsive design, 
+                    product showcase, and optimized user experience.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article
+              class="bg-white rounded overflow-hidden card-hover cursor-pointer"
+            >
+              <a
+                href="https://mabini-tourism-landing-page.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block"
+              >
+                <div class="relative overflow-hidden">
+                  <img
+                    src="https://c.animaapp.com/mie73zissOwntu/img/ai_2.png"
+                    alt="Mabini Tourism Landing Page"
+                    width="1200"
+                    height="800"
+                    class="w-full h-64 object-cover"
+                    loading="lazy"
+                  />
+                  <div
+                    class="absolute inset-0 bg-primary/90 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center"
+                  >
+                    <span class="text-primary-foreground font-normal text-lg"
+                      >View Project</span
+                    >
+                  </div>
+                </div>
+                <div class="p-8">
+                  <h3
+                    class="font-heading font-semibold text-2xl text-neutral-foreground mb-3"
+                  >
+                    Mabini Tourism Landing Page
+                  </h3>
+                  <p class="text-gray-700 leading-relaxed">
+                    Beautiful tourism landing page showcasing Mabini's attractions 
+                    with engaging visuals and interactive elements.
+                  </p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume" class="py-32 px-8 lg:px-16 bg-white">
+        <div class="max-w-5xl mx-auto">
+          <div class="text-center mb-16">
+            <h2
+              class="font-heading font-bold text-4xl md:text-5xl text-neutral-foreground mb-4"
+            >
+              Education
+            </h2>
+            <p class="text-lg text-gray-700 mb-8">
+              My educational journey and academic achievements.
+            </p>
+            <a
+              href="/resume.pdf"
+              download=""
+              class="inline-block px-8 py-4 bg-secondary text-secondary-foreground font-normal rounded hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+            >
+              Download Resume
+            </a>
+          </div>
+
+          <div class="space-y-12">
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-8 border-l-2 border-primary">
+              <div
+                class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary"
+              ></div>
+              <div class="mb-2">
+                <span
+                  class="inline-block px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full"
+                  >2023 - Present</span
+                >
+              </div>
+              <h3
+                class="font-heading font-semibold text-2xl text-neutral-foreground mb-2"
+              >
+                Batangas State University
+              </h3>
+              <p class="text-lg text-gray-600 mb-3">TNEU-Mabini Campus</p>
+              <p class="text-gray-700 leading-relaxed mb-2">
+                Currently pursuing higher education with outstanding academic performance.
+              </p>
+              <div class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-primary"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span class="text-primary font-medium">Dean's Lister</span>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8 border-l-2 border-primary">
+              <div
+                class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary"
+              ></div>
+              <div class="mb-2">
+                <span
+                  class="inline-block px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full"
+                  >2021 - 2023</span
+                >
+              </div>
+              <h3
+                class="font-heading font-semibold text-2xl text-neutral-foreground mb-2"
+              >
+                Bauan Technical Integrated High School
+              </h3>
+              <p class="text-lg text-gray-600 mb-3">Senior High School</p>
+              <p class="text-gray-700 leading-relaxed">
+                Completed senior high school education with focus on technical and academic excellence.
+              </p>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative pl-8 border-l-2 border-primary">
+              <div
+                class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary"
+              ></div>
+              <div class="mb-2">
+                <span
+                  class="inline-block px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full"
+                  >2017 - 2020</span
+                >
+              </div>
+              <h3
+                class="font-heading font-semibold text-2xl text-neutral-foreground mb-2"
+              >
+                Bauan Technical Integrated High School
+              </h3>
+              <p class="text-lg text-gray-600 mb-3">Junior High School</p>
+              <p class="text-gray-700 leading-relaxed mb-2">
+                Completed junior high school education with consistent academic excellence.
+              </p>
+              <div class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-primary"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span class="text-primary font-medium">With Honors</span>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4 -->
+            <div class="relative pl-8 border-l-2 border-primary">
+              <div
+                class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-primary"
+              ></div>
+              <div class="mb-2">
+                <span
+                  class="inline-block px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full"
+                  >2016 - 2017</span
+                >
+              </div>
+              <h3
+                class="font-heading font-semibold text-2xl text-neutral-foreground mb-2"
+              >
+                San Andres Elementary School
+              </h3>
+              <p class="text-lg text-gray-600 mb-3">Elementary School</p>
+              <p class="text-gray-700 leading-relaxed mb-2">
+                Completed elementary education with strong academic foundation.
+              </p>
+              <div class="flex items-center gap-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-primary"
+                >
+                  <path d="M20 6 9 17l-5-5"></path>
+                </svg>
+                <span class="text-primary font-medium">With Honors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-32 px-8 lg:px-16 bg-neutral">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-16">
+            <h2
+              class="font-heading font-bold text-4xl md:text-5xl text-neutral-foreground mb-4"
+            >
+              Get In Touch
+            </h2>
+            <p class="text-lg text-gray-700">
+              Have a project in mind? Let's work together to bring your ideas to
+              life.
+            </p>
+          </div>
+
+          <form class="bg-white rounded p-8 md:p-12 space-y-8">
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-neutral-foreground mb-2"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required=""
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-primary focus:outline-none transition-colors text-neutral-foreground"
+                placeholder="Your name"
+              />
+            </div>
+
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-neutral-foreground mb-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required=""
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-primary focus:outline-none transition-colors text-neutral-foreground"
+                placeholder="your.email@example.com"
+              />
+            </div>
+
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-neutral-foreground mb-2"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                required=""
+                rows="6"
+                class="w-full px-4 py-3 border-2 border-gray-300 rounded focus:border-primary focus:outline-none transition-colors resize-none text-neutral-foreground"
+                placeholder="Tell me about your project..."
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full px-8 py-4 bg-primary text-primary-foreground font-normal rounded hover:bg-secondary transition-colors cursor-pointer"
+            >
+              Send Message
+            </button>
+          </form>
+
+          <div class="mt-16 text-center">
+            <p class="text-gray-700 mb-6">Or reach out directly:</p>
+            <a
+              href="mailto:maryen.borabo@example.com"
+              class="text-primary hover:text-secondary text-lg font-medium transition-colors"
+            >
+              maryen.borabo@example.com
+            </a>
+
+            <div class="flex items-center justify-center gap-4 mt-8">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                  <path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                </svg>
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect width="4" height="12" x="2" y="9"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                class="w-12 h-12 flex items-center justify-center rounded-full border-2 border-gray-300 text-neutral-foreground hover:border-primary hover:text-primary transition-colors cursor-pointer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+                  ></path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-8 lg:px-16">
+      <div class="max-w-7xl mx-auto">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <p class="text-gray-400">
+            © 2024 Maryen E. Borabo. All rights reserved.
+          </p>
+          <a
+            href="#hero"
+            class="flex items-center gap-2 text-gray-400 hover:text-white transition-colors cursor-pointer"
+          >
+            <span>Back to top</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="m18 15-6-6-6 6"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+      });
+
+      mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+        });
+      });
+
+      // Active navigation link highlighting
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      function highlightNavigation() {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach((section) => {
+          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 100;
+          const sectionId = section.getAttribute('id');
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach((link) => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', highlightNavigation);
+
+      // Form submission handler
+      const contactForm = document.querySelector('form');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Thank you for your message! I will get back to you soon.');
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
